@@ -202,8 +202,8 @@ export const projects: Project[] = [
       "Clerk",
       "OpenAI API",
     ],
-    live: "#",
-    repo: "#",
+    live: "https://careerforge-one-murex.vercel.app",
+    repo: "https://github.com/Varstar123/careerforge",
     gradient: "from-brand-500 via-indigo-500 to-accent-cyan",
   },
   {
@@ -227,8 +227,8 @@ export const projects: Project[] = [
       "Clerk",
       "Tailwind CSS",
     ],
-    live: "#",
-    repo: "#",
+    live: "https://verdana-flax.vercel.app",
+    repo: "https://github.com/Varstar123/verdana",
     gradient: "from-emerald-500 via-teal-500 to-accent-cyan",
   },
   {
@@ -245,8 +245,8 @@ export const projects: Project[] = [
       "Structured the architecture to support planned AI-powered image matching and intelligent search.",
     ],
     stack: ["React", "Node.js", "Express.js", "MongoDB"],
-    live: "#",
-    repo: "#",
+    live: "https://missing-child-finder.vercel.app",
+    repo: "https://github.com/Varstar123/missing-child-finder",
     gradient: "from-rose-500 via-pink-500 to-accent-violet",
   },
   {
@@ -262,8 +262,8 @@ export const projects: Project[] = [
       "Implemented secure CRUD APIs and responsive interfaces, with reusable React components to improve maintainability and scalability.",
     ],
     stack: ["React", "Node.js", "Express.js", "MongoDB"],
-    live: "#",
-    repo: "#",
+    live: "https://hostelmart-gray.vercel.app",
+    repo: "https://github.com/Varstar123/hostelmart",
     gradient: "from-amber-500 via-orange-500 to-rose-500",
   },
 ];
