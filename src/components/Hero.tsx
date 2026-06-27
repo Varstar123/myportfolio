@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -165,11 +166,16 @@ export default function Hero() {
           <div className="absolute inset-8 rounded-full border border-brand-500/20" />
           <div className="absolute inset-0 rounded-full bg-brand-500/10 blur-2xl" />
 
-          {/* Avatar disc — swap the inner block for <img src="/avatar.jpg" /> to use a photo */}
-          <div className="gradient-ring absolute inset-6 grid place-items-center rounded-full bg-gradient-to-br from-surface to-card shadow-glow">
-            <span className="font-display text-7xl font-bold gradient-text">
-              {site.initials}
-            </span>
+          {/* Profile photo */}
+          <div className="gradient-ring absolute inset-6 overflow-hidden rounded-full bg-gradient-to-br from-surface to-card shadow-glow">
+            <Image
+              src="/avatar.jpg"
+              alt={site.name}
+              fill
+              priority
+              sizes="(min-width: 1024px) 22rem, 1px"
+              className="object-cover object-top"
+            />
           </div>
 
           {/* Floating tech chips */}
