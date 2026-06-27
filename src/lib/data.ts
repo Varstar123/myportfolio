@@ -52,8 +52,7 @@ export const site = {
 export const stats: { value: string; label: string }[] = [
   { value: "8.17", label: "CGPA / 10" },
   { value: "4", label: "Shipped Projects" },
-  { value: "2", label: "Industry Internships" },
-  { value: "1", label: "Production Client App" },
+  { value: "1", label: "Industry Internship" },
 ];
 
 export type SkillTrack = {

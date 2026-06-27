@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
+import Logo from "./Logo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -11,9 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <a href="#home" className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-cyan font-display text-sm font-bold text-white">
-                {site.initials}
-              </span>
+              <Logo idSuffix="foot" className="h-9 w-9" />
               <span className="font-display text-base font-semibold text-white">
                 {site.name}
               </span>

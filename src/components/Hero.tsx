@@ -207,7 +207,7 @@ export default function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4"
+          className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-border bg-border"
         >
           {stats.map((s) => (
             <div
