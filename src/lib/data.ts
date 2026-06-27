@@ -22,7 +22,7 @@ export type IconName =
 
 export const site = {
   name: "Varun Narayan C",
-  shortName: "Varun N.",
+  shortName: "Varun Narayan C",
   initials: "VN",
   role: "Full-Stack & AI Application Developer",
   // Rotating roles used by the hero typing effect
@@ -39,8 +39,7 @@ export const site = {
   resume: "/resume.pdf",
   socials: {
     github: "https://github.com/Varstar123",
-    // TODO: replace with your real LinkedIn profile URL
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/varun-narayan-c-84ba752b2/",
     email: "mailto:varunnarayanc2005@gmail.com",
   },
   summary:

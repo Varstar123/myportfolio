@@ -67,13 +67,13 @@ export default function Navbar() {
             idSuffix="nav"
             className="h-9 w-9 drop-shadow-[0_0_12px_rgba(99,102,241,0.35)] transition-transform group-hover:scale-105"
           />
-          <span className="font-display text-base font-semibold text-white">
+          <span className="whitespace-nowrap font-display text-base font-semibold text-white">
             {site.shortName}
           </span>
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => {
             const isActive = active === link.href;
             return (
@@ -98,7 +98,7 @@ export default function Navbar() {
         <a
           href={site.resume}
           download
-          className="hidden items-center gap-2 rounded-lg border border-border bg-white/[0.03] px-4 py-2 text-sm font-medium text-white transition-colors hover:border-brand-500/60 hover:bg-brand-500/10 md:inline-flex"
+          className="hidden items-center gap-2 rounded-lg border border-border bg-white/[0.03] px-4 py-2 text-sm font-medium text-white transition-colors hover:border-brand-500/60 hover:bg-brand-500/10 lg:inline-flex"
         >
           <FileText className="h-4 w-4" />
           Resume
@@ -108,7 +108,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-lg border border-border bg-white/[0.03] text-white md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-lg border border-border bg-white/[0.03] text-white lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
@@ -118,7 +118,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-border bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 md:hidden ${
+        className={`overflow-hidden border-border bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden ${
           open
             ? "max-h-[80vh] overflow-y-auto border-b opacity-100"
             : "max-h-0 opacity-0"
