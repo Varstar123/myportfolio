@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-slate-200 font-sans antialiased;
+    background-image: radial-gradient(
+        60rem 60rem at 70% -10%,
+        rgba(99, 102, 241, 0.12),
+        transparent 60%
+      ),
+      radial-gradient(
+        50rem 50rem at 0% 30%,
+        rgba(34, 211, 238, 0.08),
+        transparent 55%
+      );
+    background-attachment: fixed;
+  }
+
+  /* Offset for sticky navbar when jumping to anchors */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.35);
+    color: #fff;
+  }
+
+  /* Keyboard focus indicator (Tailwind preflight strips the UA default).
+     :where() keeps specificity at 0 so components can still opt into their
+     own focus styles (e.g. the contact inputs' focus ring). */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 via-accent-violet to-accent-cyan bg-clip-text text-transparent;
+  }
+
+  .surface-card {
+    @apply rounded-2xl border border-border bg-card/70 backdrop-blur-sm shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.03] px-3 py-1 text-xs font-medium text-muted;
+  }
+
+  /* Animated gradient border wrapper */
+  .gradient-ring {
+    position: relative;
+  }
+  .gradient-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.6),
+      rgba(168, 85, 247, 0.25),
+      rgba(34, 211, 238, 0.6)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+}
+
+/* Thin, themed scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #070710;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#3b3b55, #23233a);
+  border-radius: 999px;
+  border: 2px solid #070710;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#4f46e5, #6366f1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
