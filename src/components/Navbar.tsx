@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, FileText } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -62,9 +63,10 @@ export default function Navbar() {
       >
         {/* Logo */}
         <a href="#home" className="group flex items-center gap-2.5" aria-label="Home">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-cyan font-display text-sm font-bold text-white shadow-glow transition-transform group-hover:scale-105">
-            {site.initials}
-          </span>
+          <Logo
+            idSuffix="nav"
+            className="h-9 w-9 drop-shadow-[0_0_12px_rgba(99,102,241,0.35)] transition-transform group-hover:scale-105"
+          />
           <span className="font-display text-base font-semibold text-white">
             {site.shortName}
           </span>
