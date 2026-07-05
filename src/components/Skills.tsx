@@ -2,6 +2,7 @@ import { skillGroups } from "@/lib/data";
 import { iconMap } from "@/lib/icons";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import { LiquidMetalCard } from "./ui/liquid-metal-card";
 
 // Marquee strip of key technologies (duplicated for a seamless loop)
 const marquee = [
@@ -48,8 +49,11 @@ export default function Skills() {
           {skillGroups.map((group, i) => {
             const Icon = iconMap[group.icon];
             return (
-              <Reveal key={group.title} delay={(i % 3) * 0.08}>
-                <div className="surface-card group h-full p-6 transition-all hover:-translate-y-1 hover:border-brand-500/40">
+              <Reveal key={group.title} delay={(i % 3) * 0.08} className="h-full">
+                <LiquidMetalCard
+                  className="h-full transition-transform duration-300 hover:-translate-y-1"
+                  innerClassName="p-6"
+                >
                   <div className="mb-4 flex items-center gap-3">
                     <span className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-white/[0.03] text-brand-300 transition-colors group-hover:text-accent-cyan">
                       <Icon className="h-5 w-5" />
@@ -68,7 +72,7 @@ export default function Skills() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </LiquidMetalCard>
               </Reveal>
             );
           })}

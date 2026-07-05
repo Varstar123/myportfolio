@@ -5,6 +5,7 @@ import { Menu, X, FileText } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
 import Logo from "./Logo";
 import SpotlightNav from "./SpotlightNav";
+import LiquidMetalButton from "./ui/liquid-metal";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,6 +49,17 @@ export default function Navbar() {
     };
   }, [open]);
 
+  // The liquid-metal button is a <button>, so trigger the PDF download here.
+  const downloadResume = () => {
+    const a = document.createElement("a");
+    a.href = site.resume;
+    a.download = "";
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -80,15 +92,16 @@ export default function Navbar() {
           onSelect={setActiveIndex}
         />
 
-        {/* Desktop CTA */}
-        <a
-          href={site.resume}
-          download
-          className="hidden shrink-0 items-center gap-2 rounded-lg border border-border bg-white/[0.03] px-4 py-2 text-sm font-medium text-white transition-colors hover:border-brand-500/60 hover:bg-brand-500/10 lg:inline-flex"
+        {/* Desktop CTA — liquid-metal resume button */}
+        <LiquidMetalButton
+          size="sm"
+          onClick={downloadResume}
+          aria-label="Download résumé"
+          icon={<FileText className="h-4 w-4" />}
+          className="hidden shrink-0 lg:block"
         >
-          <FileText className="h-4 w-4" />
           Resume
-        </a>
+        </LiquidMetalButton>
 
         {/* Mobile toggle */}
         <button
