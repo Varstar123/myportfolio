@@ -3,6 +3,7 @@ import { site, tracks } from "@/lib/data";
 import { iconMap } from "@/lib/icons";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import { CardSpotlight } from "./ui/card-spotlight";
 
 const facts = [
   { icon: MapPin, label: "Based in", value: site.location },
@@ -28,7 +29,7 @@ export default function About() {
         <div className="mt-12 grid gap-6 lg:grid-cols-5">
           {/* Narrative */}
           <Reveal className="lg:col-span-3" delay={0.05}>
-            <div className="surface-card h-full p-7 sm:p-8">
+            <CardSpotlight className="h-full p-7 sm:p-8">
               <p className="leading-relaxed text-slate-300">
                 I&apos;m a{" "}
                 <span className="font-semibold text-white">
@@ -64,7 +65,7 @@ export default function About() {
                   </div>
                 ))}
               </div>
-            </div>
+            </CardSpotlight>
           </Reveal>
 
           {/* What I do — the two tracks */}
@@ -74,7 +75,7 @@ export default function About() {
               const isCyan = track.accent === "cyan";
               return (
                 <Reveal key={track.id} delay={0.1 + i * 0.1}>
-                  <div className="surface-card group h-full p-6 transition-colors hover:border-brand-500/40">
+                  <CardSpotlight className="group h-full p-6 transition-colors hover:border-brand-500/40">
                     <div
                       className={`mb-4 grid h-11 w-11 place-items-center rounded-xl ${
                         isCyan
@@ -97,7 +98,7 @@ export default function About() {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </CardSpotlight>
                 </Reveal>
               );
             })}
