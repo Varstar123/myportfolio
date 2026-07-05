@@ -5,7 +5,6 @@ import { Menu, X, FileText } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
 import Logo from "./Logo";
 import SpotlightNav from "./SpotlightNav";
-import AnimatedButton from "./ui/animated-button";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,17 +48,6 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // The liquid-metal button is a <button>, so trigger the PDF download here.
-  const downloadResume = () => {
-    const a = document.createElement("a");
-    a.href = site.resume;
-    a.download = "";
-    a.rel = "noopener";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  };
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -68,7 +56,7 @@ export default function Navbar() {
           : "border-b border-transparent"
       }`}
     >
-      <div className="container-px flex h-16 items-center justify-between gap-4">
+      <div className="container-px relative flex h-16 items-center justify-between gap-4">
         {/* Logo */}
         <a
           href="#home"
@@ -85,21 +73,15 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Center spotlight pill (lg+) */}
-        <SpotlightNav
-          items={navLinks}
-          activeIndex={activeIndex}
-          onSelect={setActiveIndex}
-        />
-
-        {/* Desktop CTA — animated shine resume button */}
-        <div className="hidden shrink-0 lg:block">
-          <AnimatedButton onClick={downloadResume} aria-label="Download résumé">
-            <span className="flex items-center gap-2">
-              <FileText className="h-4 w-4" />
-              Resume
-            </span>
-          </AnimatedButton>
+        {/* Center spotlight pill (lg+), absolutely centered */}
+        <div className="pointer-events-none absolute inset-0 hidden items-center justify-center lg:flex">
+          <div className="pointer-events-auto">
+            <SpotlightNav
+              items={navLinks}
+              activeIndex={activeIndex}
+              onSelect={setActiveIndex}
+            />
+          </div>
         </div>
 
         {/* Mobile toggle */}
