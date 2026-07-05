@@ -5,7 +5,7 @@ import { Menu, X, FileText } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
 import Logo from "./Logo";
 import SpotlightNav from "./SpotlightNav";
-import LiquidMetalButton from "./ui/liquid-metal";
+import AnimatedButton from "./ui/animated-button";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -92,16 +92,15 @@ export default function Navbar() {
           onSelect={setActiveIndex}
         />
 
-        {/* Desktop CTA — liquid-metal resume button */}
-        <LiquidMetalButton
-          size="sm"
-          onClick={downloadResume}
-          aria-label="Download résumé"
-          icon={<FileText className="h-4 w-4" />}
-          className="hidden shrink-0 lg:block"
-        >
-          Resume
-        </LiquidMetalButton>
+        {/* Desktop CTA — animated shine resume button */}
+        <div className="hidden shrink-0 lg:block">
+          <AnimatedButton onClick={downloadResume} aria-label="Download résumé">
+            <span className="flex items-center gap-2">
+              <FileText className="h-4 w-4" />
+              Resume
+            </span>
+          </AnimatedButton>
+        </div>
 
         {/* Mobile toggle */}
         <button
