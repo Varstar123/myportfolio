@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { site, stats } from "@/lib/data";
+import { CometCard } from "@/components/ui/comet-card";
 
 /** Minimal typewriter that cycles through a list of words. */
 function useTypewriter(
@@ -57,13 +58,6 @@ const item = {
   hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
-
-const floatingChips = [
-  { label: "Next.js", className: "left-0 top-6" },
-  { label: "React 19", className: "right-2 top-0" },
-  { label: "TypeScript", className: "left-2 bottom-10" },
-  { label: "OpenAI API", className: "right-0 bottom-0" },
-];
 
 export default function Hero() {
   const typed = useTypewriter(site.roles);
@@ -155,48 +149,47 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right — avatar */}
+        {/* Right — profile card with 3D tilt */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto hidden aspect-square w-full max-w-sm lg:block"
+          className="relative mx-auto hidden w-full max-w-[19rem] lg:block"
         >
-          {/* Pulse rings */}
-          <div className="absolute inset-8 rounded-full border border-brand-500/20" />
-          <div className="absolute inset-0 rounded-full bg-brand-500/10 blur-2xl" />
+          {/* Soft glow behind the card */}
+          <div className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-brand-500/15 blur-3xl" />
 
-          {/* Profile photo */}
-          <div className="gradient-ring absolute inset-6 overflow-hidden rounded-full bg-gradient-to-br from-surface to-card shadow-glow">
-            <Image
-              src="/avatar.jpg"
-              alt={site.name}
-              fill
-              priority
-              sizes="(min-width: 1024px) 22rem, 1px"
-              className="object-cover object-top"
-            />
-          </div>
+          <CometCard className="relative">
+            <div className="gradient-ring flex flex-col rounded-2xl bg-gradient-to-b from-[#15151f] to-[#0b0b12] p-3 shadow-card">
+              {/* Photo */}
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-black">
+                <Image
+                  src="/avatar.jpg"
+                  alt={site.name}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 19rem, 1px"
+                  className="object-cover object-top"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
 
-          {/* Floating tech chips */}
-          {floatingChips.map((chip, i) => (
-            <motion.span
-              key={chip.label}
-              className={`absolute ${chip.className} chip animate-float border-brand-500/20 bg-card/80 text-slate-200 shadow-card backdrop-blur`}
-              style={{ animationDelay: `${i * 0.6}s` }}
-            >
-              {chip.label}
-            </motion.span>
-          ))}
+                {/* Open-to-work badge */}
+                <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-black/50 px-2.5 py-1 text-[11px] font-medium text-emerald-300 backdrop-blur">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                  </span>
+                  Open to work
+                </span>
+              </div>
 
-          {/* Availability badge */}
-          <span className="absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-300 backdrop-blur">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Open to work
-          </span>
+              {/* Footer */}
+              <div className="flex items-center justify-between px-1.5 py-3 font-mono text-white">
+                <span className="text-xs">{site.name}</span>
+                <span className="text-xs text-faint">Kerala, IN</span>
+              </div>
+            </div>
+          </CometCard>
         </motion.div>
       </div>
 
