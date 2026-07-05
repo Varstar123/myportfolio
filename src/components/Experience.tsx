@@ -48,7 +48,16 @@ export default function Experience() {
                       · {exp.location}
                     </p>
 
-                    <ul className="mt-4 space-y-2.5">
+                    {exp.summary && (
+                      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                        {exp.summary}
+                      </p>
+                    )}
+
+                    <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-faint">
+                      Key responsibilities
+                    </p>
+                    <ul className="mt-2.5 space-y-2.5">
                       {exp.bullets.map((b, bi) => (
                         <li
                           key={bi}
