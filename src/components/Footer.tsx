@@ -1,6 +1,7 @@
-import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
+import { ArrowUp, Heart } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
 import Logo from "./Logo";
+import FooterDock from "./FooterDock";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -82,30 +83,13 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              {[
-                { href: site.socials.github, label: "GitHub", Icon: Github },
-                { href: site.socials.linkedin, label: "LinkedIn", Icon: Linkedin },
-                { href: site.socials.email, label: "Email", Icon: Mail },
-              ].map(({ href, label, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
-                  aria-label={label}
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-border text-muted transition-colors hover:border-brand-500/60 hover:text-white"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
+            <FooterDock />
             <a
               href="#home"
               aria-label="Back to top"
-              className="grid h-9 w-9 place-items-center rounded-lg border border-border text-muted transition-colors hover:border-brand-500/60 hover:text-white"
+              className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-muted shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-colors hover:text-white"
             >
-              <ArrowUp className="h-4 w-4" />
+              <ArrowUp className="h-[18px] w-[18px]" />
             </a>
           </div>
         </div>

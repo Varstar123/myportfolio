@@ -272,6 +272,7 @@ export type Experience = {
   period: string;
   location: string;
   current: boolean;
+  summary?: string;
   bullets: string[];
   tags: string[];
 };
@@ -283,6 +284,8 @@ export const experiences: Experience[] = [
     period: "May 2026 – Jun 2026",
     location: "Remote",
     current: true,
+    summary:
+      "Worked within the QA function of a client engineering team, responsible for the automated test coverage and release quality of a production web application delivered to Homewav LLC — owning everything from authoring and maintaining test suites to verifying defect fixes alongside developers within a modern Git/Bitbucket workflow.",
     bullets: [
       "Built and maintained automated test cases with Robot Framework for a production web application delivered to Homewav LLC, expanding regression coverage of critical user flows.",
       "Partnered with developers to reproduce, isolate, and verify fixes for software defects, reducing release regressions and improving overall release quality.",
