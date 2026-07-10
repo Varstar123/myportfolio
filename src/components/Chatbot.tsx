@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Bot, Send, Sparkles, X } from "lucide-react";
+import { Send, Sparkles, X } from "lucide-react";
 import { GREETING, getBotResponse, type BotReply } from "@/lib/chat";
 import { site } from "@/lib/data";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
@@ -76,8 +77,14 @@ export default function Chatbot() {
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-border bg-white/[0.02] px-4 py-3">
-              <span className="relative grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-accent-cyan text-white">
-                <Bot className="h-5 w-5" />
+              <span className="relative h-9 w-9 shrink-0">
+                <Image
+                  src="/avatar.jpg"
+                  alt={site.name}
+                  fill
+                  sizes="36px"
+                  className="rounded-full object-cover object-top ring-2 ring-brand-500/40"
+                />
                 <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-surface bg-emerald-400" />
               </span>
               <div className="min-w-0 flex-1">
@@ -174,38 +181,42 @@ export default function Chatbot() {
         )}
       </AnimatePresence>
 
-      {/* Launcher — HoverBorderGradient icon */}
+      {/* Launcher — wider HoverBorderGradient pill */}
       <HoverBorderGradient
         as="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close assistant" : "Open assistant"}
         containerClassName="rounded-full shadow-glow"
-        className="flex h-14 w-14 items-center justify-center rounded-full !p-0"
+        className="flex items-center gap-2.5 rounded-full px-5 py-3 text-sm font-semibold text-white"
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {open ? (
-            <motion.span
-              key="close"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <X className="h-6 w-6 text-white" />
-            </motion.span>
-          ) : (
-            <motion.span
-              key="open"
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="relative"
-            >
-              <Sparkles className="h-6 w-6 text-brand-200" />
-            </motion.span>
-          )}
-        </AnimatePresence>
+        <span className="relative flex h-5 w-5 items-center justify-center">
+          <AnimatePresence mode="wait" initial={false}>
+            {open ? (
+              <motion.span
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute"
+              >
+                <X className="h-[18px] w-[18px]" />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="open"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute"
+              >
+                <Sparkles className="h-[18px] w-[18px] text-brand-200" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </span>
+        <span>{open ? "Close" : "Ask AI"}</span>
       </HoverBorderGradient>
     </div>
   );
