@@ -56,15 +56,13 @@ export default function Logo({ className, idSuffix = "a" }: LogoProps) {
         strokeWidth="1.5"
       />
 
-      <g
+      <path
+        d="M14 17 L32 50 L50 17 L40.5 17 L32 38 L23.5 17 Z"
+        fill={`url(#${stroke})`}
         stroke={`url(#${stroke})`}
-        strokeWidth="7.5"
-        strokeLinecap="round"
+        strokeWidth="2.6"
         strokeLinejoin="round"
-        fill="none"
-      >
-        <path d="M17 19 L32 47 L47 19" />
-      </g>
+      />
     </svg>
   );
 }
