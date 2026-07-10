@@ -45,7 +45,7 @@ export default function OpengraphImage() {
               fontWeight: 700,
             }}
           >
-            {site.initials}
+            V
           </div>
           Portfolio
         </div>
