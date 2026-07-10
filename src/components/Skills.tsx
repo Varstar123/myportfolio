@@ -50,16 +50,16 @@ export default function Skills() {
             const Icon = iconMap[group.icon];
             return (
               <Reveal key={group.title} delay={(i % 3) * 0.08} className="h-full">
-                <div className="relative h-full rounded-2xl border border-border p-2">
+                <div className="relative h-full rounded-2xl border border-border p-px">
                   <GlowingEffect
-                    spread={40}
+                    spread={36}
                     glow
                     disabled={false}
                     proximity={64}
                     inactiveZone={0.01}
-                    borderWidth={2}
+                    borderWidth={1}
                   />
-                  <div className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-xl bg-card p-6">
+                  <div className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-[15px] bg-card p-6">
                     <div className="flex items-center gap-3">
                       <span className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-white/[0.03] text-brand-300 transition-colors group-hover:text-accent-cyan">
                         <Icon className="h-5 w-5" />
