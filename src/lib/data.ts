@@ -251,7 +251,7 @@ export const projects: Project[] = [
       "COCO-SSD",
     ],
     live: "https://unblinder-frontend.onrender.com/",
-    repo: "#",
+    repo: "https://github.com/Varstar123/unblinder",
     gradient: "from-sky-500 via-blue-500 to-accent-cyan",
   },
   {
