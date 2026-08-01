@@ -50,7 +50,7 @@ export const site = {
 
 export const stats: { value: string; label: string }[] = [
   { value: "8.17", label: "CGPA / 10" },
-  { value: "4", label: "Shipped Projects" },
+  { value: "6", label: "Shipped Projects" },
   { value: "1", label: "Industry Internship" },
 ];
 
@@ -230,6 +230,31 @@ export const projects: Project[] = [
     gradient: "from-emerald-500 via-teal-500 to-accent-cyan",
   },
   {
+    slug: "unblinder",
+    name: "Unblinder",
+    category: "Assistive AI Web App",
+    year: "2026",
+    featured: true,
+    tagline:
+      "Real-time cane-mounted camera app that narrates the path ahead for blind and low-vision users, blending on-device detection with cloud vision AI.",
+    description: [
+      "Built a hybrid real-time assistive app that runs on-device object detection (TensorFlow.js/COCO-SSD) every frame for instant obstacle and traffic-light stops, with zero network dependency on the safety-critical path.",
+      "Layered in a Groq vision AI proxy that narrates stairs, curbs, and drop-offs and answers spoken questions about the scene, with fail-safe parsing so a bad AI response never overrides the on-device stop.",
+      "Designed an audio-first, high-contrast UI with speech synthesis, voice Q&A, and phone vibration feedback, shipped as a privacy-first PWA with the API key kept server-side.",
+    ],
+    stack: [
+      "JavaScript",
+      "TensorFlow.js",
+      "Python",
+      "Groq API",
+      "Web Speech API",
+      "COCO-SSD",
+    ],
+    live: "https://unblinder-frontend.onrender.com/",
+    repo: "#",
+    gradient: "from-sky-500 via-blue-500 to-accent-cyan",
+  },
+  {
     slug: "missing-child-finder",
     name: "Missing Child Finder",
     category: "Social Impact · MERN",
@@ -263,6 +288,32 @@ export const projects: Project[] = [
     live: "https://hostelmart-gray.vercel.app",
     repo: "https://github.com/Varstar123/hostelmart",
     gradient: "from-amber-500 via-orange-500 to-rose-500",
+  },
+  {
+    slug: "smart-drone-security",
+    name: "Smart City Drone Security",
+    category: "AI Drone Surveillance System",
+    year: "2026",
+    featured: false,
+    tagline:
+      "AI-based drone surveillance and emergency-response system that detects 17 danger types and coordinates real-time dispatch with a police portal.",
+    description: [
+      "Built a full-stack drone surveillance system where a phone-mounted camera analyzes live footage with Claude/Groq vision AI to detect 17 incident types (fire, accidents, violence, flooding, and more) and alert a police control portal in real time.",
+      "Implemented bidirectional coordination over Socket.IO — drones autonomously report incidents for officer review and escalation, while the portal can dispatch the nearest drones to surround a location and stream live footage back.",
+      "Designed a Supabase-backed persistence layer (Postgres + image storage) with a local JSON fallback, an offline AI simulation mode for demos, and a self-contained SVG fleet map with no external map dependency.",
+    ],
+    stack: [
+      "Node.js",
+      "Express",
+      "Socket.IO",
+      "Claude Vision API",
+      "Groq API",
+      "Supabase",
+      "PostgreSQL",
+    ],
+    live: "https://dronesecurity.onrender.com/welcome",
+    repo: "https://github.com/Varstar123/dronesecurity",
+    gradient: "from-slate-500 via-indigo-500 to-accent-violet",
   },
 ];
 
