@@ -7,7 +7,7 @@ type LogoProps = {
 /**
  * Premium "VN" monogram mark — a dark gradient tile with a hairline gradient
  * border, an inner glow, and the letters drawn as gradient strokes.
- * Mirrors the favicon at src/app/icon.svg.
+ * Used for the larger navigation mark.
  */
 export default function Logo({ className, idSuffix = "a" }: LogoProps) {
   const tile = `vn-tile-${idSuffix}`;

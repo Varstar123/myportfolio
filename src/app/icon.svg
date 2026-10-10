@@ -1,27 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <linearGradient id="vn-tile" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#16162a"/>
-      <stop offset="1" stop-color="#07070f"/>
-    </linearGradient>
-    <linearGradient id="vn-stroke" x1="12" y1="18" x2="52" y2="46" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#a5b4fc"/>
-      <stop offset="0.5" stop-color="#a855f7"/>
-      <stop offset="1" stop-color="#22d3ee"/>
-    </linearGradient>
-    <linearGradient id="vn-border" x1="6" y1="6" x2="58" y2="58" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#6366f1" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.55"/>
-    </linearGradient>
-    <radialGradient id="vn-glow" cx="0.5" cy="0.5" r="0.5">
-      <stop stop-color="#6366f1" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-
-  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#vn-tile)"/>
-  <circle cx="32" cy="33" r="23" fill="url(#vn-glow)"/>
-  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="15.25" fill="none" stroke="url(#vn-border)" stroke-width="1.5"/>
-
-  <path d="M14 17 L32 50 L50 17 L40.5 17 L32 38 L23.5 17 Z" fill="url(#vn-stroke)" stroke="url(#vn-stroke)" stroke-width="2.6" stroke-linejoin="round"/>
+  <title>Varun Narayan</title>
+  <rect width="64" height="64" rx="14" fill="#111827"/>
+  <path d="M10 19H16L22 38L28 19H34L25 45H19L10 19Z" fill="#F8FAFC"/>
+  <path d="M36 45V19H41L49 34V19H54V45H49L41 30V45H36Z" fill="#F8FAFC"/>
 </svg>
