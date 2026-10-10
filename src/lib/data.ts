@@ -40,16 +40,16 @@ export const site = {
   socials: {
     github: "https://github.com/Varstar123",
     linkedin: "https://www.linkedin.com/in/varun-narayan-c-84ba752b2/",
-    email: "mailto:varunnarayanc2005@gmail.com",
+    email: "https://mail.google.com/mail/?view=cm&fs=1&to=varunnarayanc2005%40gmail.com",
   },
   summary:
-    "Computer Science & Design undergraduate (CGPA 8.17) who ships production-grade, full-stack and AI-powered web applications end to end. I'm comfortable owning a feature from database schema to deployed UI using Next.js, React, TypeScript, and LLM APIs, with hands-on experience in automated testing and quality assurance on real client software.",
+    "Computer Science & Design undergraduate (CGPA 8.12) who ships production-grade, full-stack and AI-powered web applications end to end. I'm comfortable owning a feature from database schema to deployed UI using Next.js, React, TypeScript, and LLM APIs, with hands-on experience in automated testing and quality assurance on real client software.",
   tagline:
     "Seeking software engineering roles where I can build reliable, user-facing products at scale.",
 };
 
 export const stats: { value: string; label: string }[] = [
-  { value: "8.17", label: "CGPA / 10" },
+  { value: "8.12", label: "CGPA / 10" },
   { value: "6", label: "Shipped Projects" },
   { value: "1", label: "Industry Internship" },
 ];
@@ -358,7 +358,7 @@ export const education: Education[] = [
     school: "Government Engineering College, Kozhikode",
     degree: "B.Tech in Computer Science and Design — APJ Abdul Kalam Technological University (KTU)",
     period: "2023 – 2027",
-    detail: "CGPA: 8.17 / 10",
+    detail: "CGPA: 8.12 / 10",
   },
 ];
 

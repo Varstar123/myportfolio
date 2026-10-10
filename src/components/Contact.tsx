@@ -15,7 +15,11 @@ export default function Contact() {
     const body = encodeURIComponent(
       `${form.message}\n\n— ${form.name}${form.email ? ` (${form.email})` : ""}`
     );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    window.open(
+      `${site.socials.email}&su=${subject}&body=${body}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const channels = [
@@ -70,6 +74,8 @@ export default function Contact() {
                     <a
                       key={label}
                       href={href}
+                      target={href.startsWith("http") ? "_blank" : undefined}
+                      rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
                       className="flex items-center gap-3 rounded-xl border border-transparent p-2 transition-colors hover:border-border hover:bg-white/[0.02]"
                     >
                       {content}
@@ -148,7 +154,7 @@ export default function Contact() {
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
               <p className="text-center text-xs text-faint">
-                Opens your email client, pre-filled and addressed to me.
+                Opens Gmail with your message pre-filled and addressed to me.
               </p>
             </form>
           </div>

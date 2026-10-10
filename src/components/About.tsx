@@ -10,7 +10,7 @@ const facts = [
   {
     icon: GraduationCap,
     label: "Education",
-    value: "B.Tech CSE & Design · CGPA 8.17",
+    value: "B.Tech CSE & Design · CGPA 8.12",
   },
   { icon: Briefcase, label: "Currently", value: "Software Development Intern" },
   { icon: Mail, label: "Email", value: site.email },
